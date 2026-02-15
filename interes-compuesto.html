@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de interés compuesto | cuantomequeda.io</title>
+  <meta name="description" content="Calcula cuánto puedes acumular con interés compuesto. Simulador rápido y gratuito.">
+  <link rel="canonical" href="https://cuantomequeda.io/interes-compuesto.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="wrap">
+  <a href="index.html"><strong>cuantomequeda.io</strong></a>
+</header>
+
+<main class="wrap">
+
+  <h1>Calculadora de interés compuesto</h1>
+  <p class="muted">Simula cuánto puedes acumular invirtiendo a largo plazo.</p>
+
+  <section class="card">
+    <form id="formInteres" class="grid">
+      
+      <label>
+        Capital inicial (€)
+        <input type="number" name="capital" required>
+      </label>
+
+      <label>
+        Aportación mensual (€)
+        <input type="number" name="mensual" required>
+      </label>
+
+      <label>
+        Rentabilidad anual (%)
+        <input type="number" name="interes" step="0.1" required>
+      </label>
+
+      <label>
+        Años
+        <input type="number" name="anos" required>
+      </label>
+
+      <button type="submit">Calcular</button>
+    </form>
+  </section>
+
+  <section class="card" id="resultado" style="display:none;">
+    <h2>Resultado</h2>
+    <div id="out"></div>
+  </section>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="muted">
+    Cálculo orientativo. No constituye asesoramiento financiero.
+  </p>
+</footer>
+
+<script>
+document.getElementById("formInteres").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const capital = Number(this.capital.value);
+  const mensual = Number(this.mensual.value);
+  const interes = Number(this.interes.value) / 100 / 12;
+  const anos = Number(this.anos.value);
+
+  const meses = anos * 12;
+
+  let total = capital * Math.pow(1 + interes, meses);
+  total += mensual * ((Math.pow(1 + interes, meses) - 1) / interes);
+
+  document.getElementById("resultado").style.display = "block";
+  document.getElementById("out").innerHTML =
+    "<p><strong>Total acumulado:</strong> " +
+    total.toLocaleString("es-ES", {style:"currency", currency:"EUR"}) +
+    "</p>";
+});
+</script>
+
+</body>
+</html>
