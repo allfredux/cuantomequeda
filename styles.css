@@ -1,0 +1,91 @@
+/* --------- Base --------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  background-color: #f7f7f7;
+  color: #222;
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --------- Header --------- */
+
+header {
+  margin-bottom: 30px;
+}
+
+header a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+/* --------- Cards --------- */
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* --------- Form --------- */
+
+.grid {
+  display: grid;
+  gap: 15px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+input, select {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* --------- Footer --------- */
+
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* --------- Utility --------- */
+
+.muted {
+  color: #777;
+  font-size: 14px;
+}
