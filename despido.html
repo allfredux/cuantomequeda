@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de despido 2026 | cuantomequeda.io</title>
+  <meta name="description" content="Calcula tu indemnización por despido en España (improcedente u objetivo). Estimación rápida y orientativa.">
+  <link rel="canonical" href="https://cuantomequeda.io/despido.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="wrap">
+  <a href="index.html"><strong>cuantomequeda.io</strong></a>
+</header>
+
+<main class="wrap">
+
+  <h1>Calculadora de despido (España)</h1>
+  <p class="muted">Estimación orientativa según tipo de despido y antigüedad.</p>
+
+  <section class="card">
+    <form id="formDespido" class="grid">
+      
+      <label>
+        Salario bruto anual (€)
+        <input type="number" name="salario" required>
+      </label>
+
+      <label>
+        Años trabajados
+        <input type="number" name="anos" required>
+      </label>
+
+      <label>
+        Tipo de despido
+        <select name="tipo">
+          <option value="improcedente">Improcedente (33 días/año)</option>
+          <option value="objetivo">Objetivo (20 días/año)</option>
+        </select>
+      </label>
+
+      <button type="submit">Calcular</button>
+    </form>
+  </section>
+
+  <section class="card" id="resultado" style="display:none;">
+    <h2>Resultado estimado</h2>
+    <div id="out"></div>
+  </section>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="muted">
+    Cálculo orientativo. No constituye asesoramiento legal.
+  </p>
+</footer>
+
+<script>
+document.getElementById("formDespido").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const salario = Number(this.salario.value);
+  const anos = Number(this.anos.value);
+  const tipo = this.tipo.value;
+
+  const salarioDiario = salario / 365;
+  const diasPorAno = (tipo === "improcedente") ? 33 : 20;
+
+  const indemnizacion = salarioDiario * diasPorAno * anos;
+
+  document.getElementById("resultado").style.display = "block";
+  document.getElementById("out").innerHTML =
+    "<p><strong>Indemnización estimada:</strong> " +
+    indemnizacion.toLocaleString("es-ES", {style:"currency", currency:"EUR"}) +
+    "</p>";
+});
+</script>
+
+</body>
+</html>
