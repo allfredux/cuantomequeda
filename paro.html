@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculadora de paro (prestación contributiva) 2026 | cuantomequeda.io</title>
+  <meta name="description" content="Calcula cuánto cobrarás de paro y durante cuánto tiempo (prestación contributiva). Basado en reglas SEPE: 70% primeros 180 días, 60% después y topes min/max.">
+  <link rel="canonical" href="https://cuantomequeda.io/paro.html">
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- AdSense (pegar aquí cuando te aprueben) -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TU_ID" crossorigin="anonymous"></script> -->
+
+  <!-- CMP cookies UE (CookieYes/CookieHub). Pegar aquí el script cuando lo tengas -->
+  <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/TU_ID/script.js"></script> -->
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"¿Qué datos necesito para calcular el paro?","acceptedAnswer":{"@type":"Answer","text":"Base reguladora diaria o mensual (media de bases de cotización de los últimos 180 días) y días cotizados por desempleo en los últimos 6 años."}},
+      {"@type":"Question","name":"¿Cómo se calcula la cuantía?","acceptedAnswer":{"@type":"Answer","text":"Se aplica el 70% de la base reguladora los primeros 180 días y el 60% desde el día 181, con límites mínimos y máximos según hijos."}},
+      {"@type":"Question","name":"¿Es un cálculo oficial del SEPE?","acceptedAnswer":{"@type":"Answer","text":"No. Es una estimación orientativa basada en reglas públicas. Para casos reales, confirma en el SEPE."}}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header class="wrap">
+  <a class="brand" href="/">cuantomequeda.io</a>
+  <nav class="nav">
+    <a href="/interes-compuesto.html">Interés compuesto</a>
+    <a href="/despido.html">Despido</a>
+    <a aria-current="page" href="/paro.html">Paro</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <h1>Calculadora de paro (prestación contributiva)</h1>
+  <p class="muted">
+    Estimación orientativa basada en reglas públicas (SEPE / Seguridad Social). Última revisión: <strong>2026-02-01</strong>.
+  </p>
+
+  <section class="card">
+    <h2>Datos</h2>
+
+    <form id="paroForm" class="grid">
+      <label>
+        Base reguladora mensual (€)
+        <input name="baseMensual" type="number" min="0" step="0.01" placeholder="Ej: 1800" required>
+        <small class="muted">Si solo conoces la base diaria, multiplícala por 30.</small>
+      </label>
+
+      <label>
+        Días cotizados por desempleo (últimos 6 años)
+        <input name="diasCotizados" type="number" min="0" step="1" placeholder="Ej: 720" required>
+      </label>
+
+      <label>
+        Hijos a cargo
+        <select name="hijos">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2 o más</option>
+        </select>
+      </label>
+
+      <button type="submit">Calcular</button>
+    </form>
+  </section>
+
+  <section class="card" id="resultado" style="display:none;">
+    <h2>Resultado</h2>
+    <div id="out"></div>
+  </section>
+
+  <section class="card">
+    <h2>Reglas usadas (resumen)</h2>
+    <ul>
+      <li><strong>Cuantía:</strong> 70% de la base reguladora los primeros 180 días; 60% desde el día 181.</li>
+      <li><strong>Límites:</strong> mínimos y máximos mensuales dependen de hijos a cargo.</li>
+      <li><strong>Duración:</strong> depende de los días cotizados por desempleo en los últimos 6 años.</li>
+    </ul>
+    <p class="muted">Fuentes: SEPE (duración y topes) y Seguridad Social (porcentajes y límites por IPREM).</p>
+  </section>
+
+  <!-- Espacio recomendado para ads (cuando Auto Ads esté activo, AdSense decide) -->
+  <div class="ad-slot"></div>
+
+</main>
+
+<footer class="wrap footer">
+  <p class="muted">
+    Esto no es asesoramiento. Para cálculo oficial, consulta SEPE. 
+    <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/aviso-legal.html">Aviso legal</a>
+  </p>
+</footer>
+
+<script src="/paro.js"></script>
+</body>
+</html>
