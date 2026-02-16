@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://cuantomequeda.io/</loc>
-  </url>
-  <url>
-    <loc>https://cuantomequeda.io/paro.html</loc>
-  </url>
-  <url>
-    <loc>https://cuantomequeda.io/despido.html</loc>
-  </url>
-  <url>
-    <loc>https://cuantomequeda.io/interes-compuesto.html</loc>
-  </url>
+  <url><loc>https://cuantomequeda.io/</loc></url>
+
+  <url><loc>https://cuantomequeda.io/paro.html</loc></url>
+  <url><loc>https://cuantomequeda.io/despido.html</loc></url>
+  <url><loc>https://cuantomequeda.io/interes-compuesto.html</loc></url>
+
+  <url><loc>https://cuantomequeda.io/bbva-despidos-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/sabadell-despidos-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/unicaja-salidas-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/telefonica-movistar-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/ericsson-ere-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/teka-ere-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/nestle-ajustes-2026.html</loc></url>
+  <url><loc>https://cuantomequeda.io/amazon-despidos-2026.html</loc></url>
 </urlset>
