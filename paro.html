@@ -1,19 +1,20 @@
 <!doctype html>
 <html lang="es">
 <head>
-
+  <!-- AdSense (conservar) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6244955081281803"
      crossorigin="anonymous"></script>
-  
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
- <title>Calculadora de paro 2026 (SEPE) — cuánto cobras y cuánto tiempo | cuantomequeda.io</title>
-<meta name="description" content="Calcula la prestación contributiva por desempleo (España): duración según días cotizados y cuantía mensual (70% primeros 180 días, 60% después) con topes SEPE.">
+  <title>Calculadora de paro 2026 (SEPE) — cuánto cobras y cuánto tiempo | cuantomequeda.io</title>
+  <meta name="description" content="Calcula la prestación contributiva por desempleo (España): duración según días cotizados y cuantía mensual (70% primeros 180 días, 60% después) con topes SEPE.">
   <link rel="canonical" href="https://cuantomequeda.io/paro.html">
   <link rel="stylesheet" href="/styles.css">
 
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6244955081281803"
-     crossorigin="anonymous"></script>
+  <!-- AMP Auto Ads (conservar) -->
+  <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
   <!-- CMP cookies UE (CookieYes/CookieHub). Pegar aquí el script cuando lo tengas -->
   <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/TU_ID/script.js"></script> -->
@@ -31,221 +32,274 @@
   </script>
 </head>
 
-  <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">cuantomequeda.io</span>
-      <span class="brand-tag">Calculadoras claras, rápidas y fiables</span>
-    </a>
-
-    <nav class="nav" aria-label="Navegación">
-      <a href="/despido.html">Despido</a>
-      <a href="/paro.html">Paro</a>
-      <a href="/interes-compuesto.html">Interés compuesto</a>
-    </nav>
-  </div>
-</header>
-  
 <body>
-<header class="wrap">
-  <a class="brand" href="/">cuantomequeda.io</a>
-  <nav class="nav">
-    <a href="/interes-compuesto.html">Interés compuesto</a>
-    <a href="/despido.html">Despido</a>
-    <a aria-current="page" href="/paro.html">Paro</a>
-  </nav>
-</header>
+  <!-- HEADER (único, consistente) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">cuantomequeda.io</span>
+        <span class="brand-tag">Calculadoras claras, rápidas y fiables</span>
+      </a>
 
-<main class="wrap">
-  <h1>Calculadora de paro (prestación contributiva)</h1>
-  <p class="muted">
-    Estimación orientativa basada en reglas públicas (SEPE / Seguridad Social). Última revisión: <strong>2026-02-01</strong>.
-  </p>
+      <nav class="nav" aria-label="Navegación">
+        <a href="/despido.html">Despido</a>
+        <a class="is-active" href="/paro.html">Paro</a>
+        <a href="/interes-compuesto.html">Interés compuesto</a>
+      </nav>
+    </div>
+  </header>
 
-  <section class="card">
-    <h2>Datos</h2>
+  <main>
+    <div class="container">
 
-    <form id="paroForm" class="grid">
-      <label>
-        Base reguladora mensual (€)
-        <input name="baseMensual" type="number" min="0" step="0.01" placeholder="Ej: 1800" required>
-        <small class="muted">Si solo conoces la base diaria, multiplícala por 30.</small>
-      </label>
+      <!-- INTRO -->
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="stack">
+            <span class="badge dot">SEPE · 2026</span>
+            <h1>Calculadora de paro (prestación contributiva)</h1>
+            <p>
+              Estimación orientativa basada en reglas públicas (SEPE / Seguridad Social).
+              Última revisión: <strong>2026-02-01</strong>.
+            </p>
 
-      <label>
-        Días cotizados por desempleo (últimos 6 años)
-        <input name="diasCotizados" type="number" min="0" step="1" placeholder="Ej: 720" required>
-      </label>
+            <div class="actions">
+              <a class="btn" href="/despido.html">← Volver a Despido</a>
+              <a class="btn btn-ghost" href="/index.html">Inicio</a>
+            </div>
 
-      <label>
-        Hijos a cargo
-        <select name="hijos">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2 o más</option>
-        </select>
-      </label>
+            <small class="subtle">No es cálculo oficial. Confirma tu caso en el SEPE.</small>
+          </div>
 
-      <button type="submit">Calcular</button>
-    </form>
-  </section>
+          <div class="hero-card stack">
+            <h3 class="mt-0">Resumen rápido</h3>
+            <ul class="mb-0">
+              <li><strong>Cuantía:</strong> 70% primeros 180 días, 60% desde el día 181.</li>
+              <li><strong>Duración:</strong> según días cotizados (últimos 6 años).</li>
+              <li><strong>Topes:</strong> mínimos/máximos varían según hijos.</li>
+            </ul>
+            <div class="notice warn">
+              <strong>Importante:</strong> los topes exactos pueden variar por año (IPREM) y situación personal.
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <section class="card" id="resultado" style="display:none;">
-    <h2>Resultado</h2>
-    <div id="out"></div>
-  </section>
+      <!-- CALCULATOR -->
+      <section class="card">
+        <h2 class="mt-0">Datos</h2>
 
-  <section class="card">
-    <h2>Reglas usadas (resumen)</h2>
-    <ul>
-      <li><strong>Cuantía:</strong> 70% de la base reguladora los primeros 180 días; 60% desde el día 181.</li>
-      <li><strong>Límites:</strong> mínimos y máximos mensuales dependen de hijos a cargo.</li>
-      <li><strong>Duración:</strong> depende de los días cotizados por desempleo en los últimos 6 años.</li>
-    </ul>
-    <p class="muted">Fuentes: SEPE (duración y topes) y Seguridad Social (porcentajes y límites por IPREM).</p>
-  </section>
+        <form id="paroForm" class="form">
+          <div class="form-grid cols-2">
+            <div class="field">
+              <label for="baseMensual">Base reguladora mensual (€)</label>
+              <input class="input" id="baseMensual" name="baseMensual" type="number" min="0" step="0.01" placeholder="Ej: 1800" required>
+              <div class="hint">Si solo conoces la base diaria, multiplícala por 30.</div>
+            </div>
 
-  <!-- Espacio recomendado para ads (cuando Auto Ads esté activo, AdSense decide) -->
-  <div class="ad-slot"></div>
+            <div class="field">
+              <label for="diasCotizados">Días cotizados por desempleo (últimos 6 años)</label>
+              <input class="input" id="diasCotizados" name="diasCotizados" type="number" min="0" step="1" placeholder="Ej: 720" required>
+              <div class="hint">Mínimo orientativo para contributiva: 360 días.</div>
+            </div>
 
-  <section class="card">
-  <h2>Cómo se calcula el paro (prestación contributiva)</h2>
+            <div class="field span-2">
+              <label for="hijos">Hijos a cargo</label>
+              <select id="hijos" name="hijos">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2 o más</option>
+              </select>
+              <div class="hint">Afecta a los topes mínimos y máximos.</div>
+            </div>
+          </div>
 
-  <p>
-    La prestación contributiva por desempleo en España depende de dos factores
-    principales: los días cotizados por desempleo en los últimos 6 años y la
-    base reguladora media de los últimos 180 días trabajados.
-  </p>
+          <div class="actions">
+            <button class="cta" type="submit">Calcular</button>
+            <a class="btn" href="/despido.html">Volver a Despido</a>
+          </div>
+        </form>
+      </section>
 
-  <h3>Duración de la prestación</h3>
+      <!-- RESULT (premium block) -->
+      <section class="result mt-4" id="resultado" style="display:none;">
+        <h2 class="mt-0">Resultado</h2>
+        <div id="out" class="muted">Se mostrará aquí el cálculo.</div>
 
-  <p>
-    Para tener derecho al paro contributivo debes haber cotizado al menos 360 días.
-    <p>
-  Consultas frecuentes: <strong>duración paro con 360 días cotizados</strong>, <strong>paro cuánto dura con 540 días</strong>,
-  <strong>paro cuánto dura con 720 días</strong> o <strong>tabla duración prestación contributiva 2026</strong>.
-  Esta calculadora resume esos tramos de forma orientativa.
-</p>
-    A partir de ahí, la duración aumenta por tramos hasta un máximo de 720 días.
-  </p>
+        <div class="notice warn mt-4">
+          <strong>Nota:</strong> el SEPE aplica reglas y topes con matices. Usa esto como orientación rápida.
+        </div>
+      </section>
 
-  <p>
-    Por ejemplo:
-  </p>
+      <!-- RULES -->
+      <section class="card">
+        <h2 class="mt-0">Reglas usadas (resumen)</h2>
+        <ul>
+          <li><strong>Cuantía:</strong> 70% de la base reguladora los primeros 180 días; 60% desde el día 181.</li>
+          <li><strong>Límites:</strong> mínimos y máximos mensuales dependen de hijos a cargo.</li>
+          <li><strong>Duración:</strong> depende de los días cotizados por desempleo en los últimos 6 años.</li>
+        </ul>
+        <p class="muted mb-0">Fuentes: SEPE (duración y topes) y Seguridad Social (porcentajes y límites por IPREM).</p>
+      </section>
 
-  <ul>
-    <li>Con 360 días cotizados → 120 días de prestación.</li>
-    <li>Con 720 días cotizados → 240 días de prestación.</li>
-    <li>Con más de 2.160 días → máximo 720 días.</li>
-  </ul>
+      <!-- EXPLANATION + TABLE -->
+      <section class="card">
+        <h2 class="mt-0">Cómo se calcula el paro (prestación contributiva)</h2>
 
-    <h3>Tabla duración prestación contributiva (orientativa 2026)</h3>
+        <p>
+          La prestación contributiva por desempleo en España depende de dos factores
+          principales: los días cotizados por desempleo en los últimos 6 años y la
+          base reguladora media de los últimos 180 días trabajados.
+        </p>
 
-<table border="1" cellpadding="6" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Días cotizados</th>
-      <th>Días de prestación</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>360 – 539</td><td>120</td></tr>
-    <tr><td>540 – 719</td><td>180</td></tr>
-    <tr><td>720 – 899</td><td>240</td></tr>
-    <tr><td>900 – 1.079</td><td>300</td></tr>
-    <tr><td>1.080 – 1.259</td><td>360</td></tr>
-    <tr><td>1.260 – 1.439</td><td>420</td></tr>
-    <tr><td>1.440 – 1.619</td><td>480</td></tr>
-    <tr><td>1.620 – 1.799</td><td>540</td></tr>
-    <tr><td>1.800 – 1.979</td><td>600</td></tr>
-    <tr><td>1.980 – 2.159</td><td>660</td></tr>
-    <tr><td>2.160 o más</td><td>720</td></tr>
-  </tbody>
-</table>
+        <h3>Duración de la prestación</h3>
 
-    <p>
-<strong>Respuesta rápida:</strong> Con 360 días cotizados tienes derecho a 120 días de paro.
-Con 720 días cotizados, 240 días. El máximo es 720 días de prestación.
-</p>
-    
-  <h3>Cuantía mensual</h3>
+        <p>
+          Para tener derecho al paro contributivo debes haber cotizado al menos 360 días.
+        </p>
 
-  <p>
-    La cuantía del paro se calcula aplicando un porcentaje a la base reguladora:
-  </p>
+        <p>
+          Consultas frecuentes: <strong>duración paro con 360 días cotizados</strong>, <strong>paro cuánto dura con 540 días</strong>,
+          <strong>paro cuánto dura con 720 días</strong> o <strong>tabla duración prestación contributiva 2026</strong>.
+          Esta calculadora resume esos tramos de forma orientativa.
+        </p>
 
-  <ul>
-    <li>70% durante los primeros 180 días.</li>
-    <li>60% a partir del día 181.</li>
-  </ul>
-    
-    <p>
-  También se consulta mucho: <strong>paro 2026 cuánto se cobra</strong>, <strong>70% 60% paro primeros 6 meses</strong>,
-  <strong>tope máximo paro 2026</strong> y <strong>mínimo paro con hijos 2026</strong>.
-  El resultado aplica los porcentajes generales y los topes orientativos.
-</p>
+        <p>
+          A partir de ahí, la duración aumenta por tramos hasta un máximo de 720 días.
+        </p>
 
-  <p>
-    Existen además límites mínimos y máximos que dependen de si tienes hijos a cargo.
-    Esto significa que aunque tu base reguladora sea muy alta, la prestación tiene
-    un tope máximo legal.
-  </p>
+        <ul>
+          <li>Con 360 días cotizados → 120 días de prestación.</li>
+          <li>Con 720 días cotizados → 240 días de prestación.</li>
+          <li>Con más de 2.160 días → máximo 720 días.</li>
+        </ul>
 
-    <h3>¿Cuánto se cobra el paro en 2026?</h3>
+        <h3>Tabla duración prestación contributiva (orientativa 2026)</h3>
 
-<p>
-Durante los primeros 180 días se cobra el 70% de la base reguladora.
-A partir del día 181 se cobra el 60%.
-Existen topes mínimos y máximos según hijos a cargo.
-</p>
-    
-  <h3>Ejemplo práctico</h3>
+        <div class="table-wrap mt-3">
+          <table class="responsive-stack">
+            <thead>
+              <tr>
+                <th>Días cotizados</th>
+                <th>Días de prestación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Días cotizados"><strong>360 – 539</strong></td><td data-label="Días de prestación">120</td></tr>
+              <tr><td data-label="Días cotizados"><strong>540 – 719</strong></td><td data-label="Días de prestación">180</td></tr>
+              <tr><td data-label="Días cotizados"><strong>720 – 899</strong></td><td data-label="Días de prestación">240</td></tr>
+              <tr><td data-label="Días cotizados"><strong>900 – 1.079</strong></td><td data-label="Días de prestación">300</td></tr>
+              <tr><td data-label="Días cotizados"><strong>1.080 – 1.259</strong></td><td data-label="Días de prestación">360</td></tr>
+              <tr><td data-label="Días cotizados"><strong>1.260 – 1.439</strong></td><td data-label="Días de prestación">420</td></tr>
+              <tr><td data-label="Días cotizados"><strong>1.440 – 1.619</strong></td><td data-label="Días de prestación">480</td></tr>
+              <tr><td data-label="Días cotizados"><strong>1.620 – 1.799</strong></td><td data-label="Días de prestación">540</td></tr>
+              <tr><td data-label="Días cotizados"><strong>1.800 – 1.979</strong></td><td data-label="Días de prestación">600</td></tr>
+              <tr><td data-label="Días cotizados"><strong>1.980 – 2.159</strong></td><td data-label="Días de prestación">660</td></tr>
+              <tr><td data-label="Días cotizados"><strong>2.160 o más</strong></td><td data-label="Días de prestación">720</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-  <p>
-    Si tu base reguladora mensual es de 1.800 € y has cotizado 720 días:
-  </p>
+        <p class="mt-4">
+          <strong>Respuesta rápida:</strong> Con 360 días cotizados tienes derecho a 120 días de paro.
+          Con 720 días cotizados, 240 días. El máximo es 720 días de prestación.
+        </p>
 
-  <ul>
-    <li>Duración aproximada: 240 días.</li>
-    <li>Primeros 6 meses: 70% → 1.260 € (con aplicación de topes).</li>
-    <li>Después: 60% → 1.080 € (con aplicación de topes).</li>
-  </ul>
+        <h3>Cuantía mensual</h3>
 
-  <p>
-    Este simulador te permite obtener una estimación rápida, pero el cálculo
-    oficial siempre lo realiza el SEPE en función de tu situación concreta.
-  </p>
+        <p>La cuantía del paro se calcula aplicando un porcentaje a la base reguladora:</p>
+        <ul>
+          <li>70% durante los primeros 180 días.</li>
+          <li>60% a partir del día 181.</li>
+        </ul>
 
-  <h3>Preguntas frecuentes</h3>
+        <p>
+          También se consulta mucho: <strong>paro 2026 cuánto se cobra</strong>, <strong>70% 60% paro primeros 6 meses</strong>,
+          <strong>tope máximo paro 2026</strong> y <strong>mínimo paro con hijos 2026</strong>.
+          El resultado aplica los porcentajes generales y los topes orientativos.
+        </p>
 
-  <p><strong>¿Puedo cobrar paro si he trabajado menos de un año?</strong><br>
-  No. Para la prestación contributiva se exigen al menos 360 días cotizados.
-  </p>
+        <p>
+          Existen además límites mínimos y máximos que dependen de si tienes hijos a cargo.
+          Esto significa que aunque tu base reguladora sea muy alta, la prestación tiene
+          un tope máximo legal.
+        </p>
 
-  <p><strong>¿Influyen los hijos en la cuantía?</strong><br>
-  Sí. Los límites mínimos y máximos cambian según tengas 0, 1 o 2 o más hijos.
-  </p>
+        <h3>¿Cuánto se cobra el paro en 2026?</h3>
 
-  <p><strong>¿Es este cálculo exacto?</strong><br>
-  Es una estimación basada en las reglas generales. El importe oficial puede
-  variar según circunstancias específicas.
-  </p>
+        <p>
+          Durante los primeros 180 días se cobra el 70% de la base reguladora.
+          A partir del día 181 se cobra el 60%.
+          Existen topes mínimos y máximos según hijos a cargo.
+        </p>
 
-</section>
-  
-</main>
+        <h3>Ejemplo práctico</h3>
 
-<footer class="wrap footer">
-  <p class="muted">
-    Esto no es asesoramiento. Para cálculo oficial, consulta SEPE. 
-    <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/aviso-legal.html">Aviso legal</a>
-  </p>
-</footer>
+        <p>Si tu base reguladora mensual es de 1.800 € y has cotizado 720 días:</p>
+        <ul>
+          <li>Duración aproximada: 240 días.</li>
+          <li>Primeros 6 meses: 70% → 1.260 € (con aplicación de topes).</li>
+          <li>Después: 60% → 1.080 € (con aplicación de topes).</li>
+        </ul>
 
-<script src="/paro.js"></script>
+        <p>
+          Este simulador te permite obtener una estimación rápida, pero el cálculo
+          oficial siempre lo realiza el SEPE en función de tu situación concreta.
+        </p>
+
+        <h3>Preguntas frecuentes</h3>
+
+        <p><strong>¿Puedo cobrar paro si he trabajado menos de un año?</strong><br>
+          No. Para la prestación contributiva se exigen al menos 360 días cotizados.
+        </p>
+
+        <p><strong>¿Influyen los hijos en la cuantía?</strong><br>
+          Sí. Los límites mínimos y máximos cambian según tengas 0, 1 o 2 o más hijos.
+        </p>
+
+        <p class="mb-0"><strong>¿Es este cálculo exacto?</strong><br>
+          Es una estimación basada en las reglas generales. El importe oficial puede
+          variar según circunstancias específicas.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="stack">
+        <strong>cuantomequeda.io</strong>
+        <p class="muted mb-0">
+          Esto no es asesoramiento. Para cálculo oficial, consulta SEPE.
+        </p>
+        <small class="subtle">© <span id="y"></span> cuantomequeda.io</small>
+      </div>
+
+      <div class="stack">
+        <div class="footer-links" aria-label="Legal">
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/cookies.html">Cookies</a>
+          <a href="/aviso-legal.html">Aviso legal</a>
+        </div>
+
+        <div class="notice">
+          <strong>Tip:</strong> si vienes de un despido, calcula también tu <a class="link" href="/despido.html">indemnización</a>.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
+    </script>
+  </footer>
+
+  <!-- JS existente (conservar) -->
+  <script src="/paro.js"></script>
+
+  <!-- AMP Auto Ads tag (conservar) -->
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-6244955081281803"></amp-auto-ads>
 </body>
-  <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-6244955081281803">
-</amp-auto-ads>
 </html>
