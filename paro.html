@@ -123,14 +123,52 @@
       </section>
 
       <!-- RESULT (premium block) -->
-      <section class="result mt-4" id="resultado" style="display:none;">
-        <h2 class="mt-0">Resultado</h2>
-        <div id="out" class="muted">Se mostrará aquí el cálculo.</div>
+     <section class="result mt-4" id="resultado" style="display:none;">
+  <h2 class="mt-0">Resultado</h2>
+  <p class="muted">Estimación orientativa basada en reglas generales y topes.</p>
 
-        <div class="notice warn mt-4">
-          <strong>Nota:</strong> el SEPE aplica reglas y topes con matices. Usa esto como orientación rápida.
-        </div>
-      </section>
+  <div class="kpis">
+    <div class="kpi">
+      <div class="label">Duración estimada</div>
+      <div class="value" id="kpi-duracion">—</div>
+      <div class="note">Días</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Primeros 180 días (70%)</div>
+      <div class="value" id="kpi-70">—</div>
+      <div class="note">€/mes (con topes)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Desde el día 181 (60%)</div>
+      <div class="value" id="kpi-60">—</div>
+      <div class="note">€/mes (con topes)</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="label">Tope mínimo aplicado</div>
+      <div class="value" id="kpi-min">—</div>
+      <div class="note">€/mes</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Tope máximo aplicado</div>
+      <div class="value" id="kpi-max">—</div>
+      <div class="note">€/mes</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Total estimado</div>
+      <div class="value" id="kpi-total">—</div>
+      <div class="note">Aproximado</div>
+    </div>
+  </div>
+
+  <div class="notice warn mt-4" id="out" role="status" aria-live="polite">
+    <strong>Nota:</strong> el SEPE aplica reglas y topes con matices. Usa esto como orientación rápida.
+  </div>
+</section>
 
       <!-- RULES -->
       <section class="card">
