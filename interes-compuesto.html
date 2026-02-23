@@ -10,199 +10,278 @@
   <link rel="canonical" href="https://cuantomequeda.io/interes-compuesto.html">
   <link rel="stylesheet" href="styles.css">
 
-<script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
+  <!-- AMP Auto Ads (conservar) -->
+  <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6244955081281803"
+  <!-- AdSense (conservar) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6244955081281803"
      crossorigin="anonymous"></script>
 </head>
 
 <body>
-
+  <!-- HEADER (único, consistente) -->
   <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">cuantomequeda.io</span>
-      <span class="brand-tag">Calculadoras claras, rápidas y fiables</span>
-    </a>
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">cuantomequeda.io</span>
+        <span class="brand-tag">Calculadoras claras, rápidas y fiables</span>
+      </a>
 
-    <nav class="nav" aria-label="Navegación">
-      <a href="/despido.html">Despido</a>
-      <a href="/paro.html">Paro</a>
-      <a href="/interes-compuesto.html">Interés compuesto</a>
-    </nav>
-  </div>
-</header>
-  
-<header class="wrap">
-  <a href="index.html"><strong>cuantomequeda.io</strong></a>
-</header>
+      <nav class="nav" aria-label="Navegación">
+        <a href="/despido.html">Despido</a>
+        <a href="/paro.html">Paro</a>
+        <a class="is-active" href="/interes-compuesto.html">Interés compuesto</a>
+      </nav>
+    </div>
+  </header>
 
-<main class="wrap">
+  <main>
+    <div class="container">
 
-  <h1>Si la vida te da limones, hazte limonada</h1>
-  <p class="muted">
-    Calcula cuánto podrías acumular para tu jubilación usando parte de tu indemnización (opcional) y una aportación mensual.
-  </p>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="stack">
+            <span class="badge dot">Jubilación · simulador</span>
+            <h1>Si la vida te da limones, hazte limonada</h1>
+            <p>
+              Calcula cuánto podrías acumular para tu jubilación usando parte de tu indemnización (opcional)
+              y una aportación mensual.
+            </p>
 
-  <h2>Simulador de ahorro para jubilación (inversión mensual)</h2>
-  <p>
-    Simula cuánto crecerá tu dinero si inviertes una parte de tu despido (si la tienes) y un porcentaje del paro o de tus ingresos cada mes durante varios años, aplicando interés compuesto.
-  </p>
+            <div class="actions">
+              <a class="btn" href="/despido.html">← Volver a Despido</a>
+              <a class="btn" href="/paro.html">Ir a Paro →</a>
+            </div>
 
-  <section class="card">
-    <h3>¿Cuánto deberías ahorrar para tu jubilación?</h3>
-    <p>
-      Consultas típicas: <strong>simulador jubilación</strong>, <strong>cuánto debo ahorrar para jubilarme</strong> o
-      <strong>cuánto tendré en 10 o 20 años invirtiendo</strong>. Esta calculadora no es asesoramiento financiero: es una estimación para entender magnitudes y el efecto de aportar de forma constante.
-    </p>
-  </section>
+            <small class="subtle">No es asesoramiento financiero. No incluye inflación ni impuestos.</small>
+          </div>
 
-  <section class="card">
-    <form id="formInteres" class="grid">
+          <div class="hero-card stack">
+            <h3 class="mt-0">Qué verás</h3>
+            <ul class="mb-0">
+              <li><strong>Total acumulado</strong> al final del periodo</li>
+              <li><strong>Total aportado</strong> (inicial + mensualidades)</li>
+              <li><strong>Ganancia estimada</strong> (antes de impuestos)</li>
+            </ul>
+            <div class="notice warn">
+              <strong>Nota:</strong> la rentabilidad real varía. Esto es una simulación.
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <label>
-        Inversión inicial (opcional) (€)
-        <input type="number" name="capital" min="0" step="1" placeholder="Ej: 5000">
-      </label>
+      <!-- Intent / SEO card -->
+      <section class="card">
+        <h2 class="mt-0">Simulador de ahorro para jubilación (inversión mensual)</h2>
+        <p class="muted mb-0">
+          Consultas típicas: <strong>simulador jubilación</strong>, <strong>cuánto debo ahorrar para jubilarme</strong> o
+          <strong>cuánto tendré en 10 o 20 años invirtiendo</strong>. Esta calculadora no es asesoramiento financiero:
+          es una estimación para entender magnitudes y el efecto de aportar de forma constante.
+        </p>
+      </section>
 
-      <label>
-        Aportación mensual (€)
-        <input type="number" name="mensual" min="0" step="1" required placeholder="Ej: 100">
-      </label>
+      <!-- CALCULATOR -->
+      <section class="card">
+        <h2 class="mt-0">Datos</h2>
 
-      <label>
-        Rentabilidad anual (%)
-        <input type="number" name="interes" min="0" step="0.1" required placeholder="Ej: 6">
-      </label>
+        <form id="formInteres" class="form">
+          <div class="form-grid cols-2">
+            <div class="field">
+              <label for="capital">Inversión inicial (opcional) (€)</label>
+              <input class="input" id="capital" type="number" name="capital" min="0" step="1" placeholder="Ej: 5000">
+              <div class="hint">Si no quieres usarla, déjala en blanco o 0.</div>
+            </div>
 
-      <label>
-        Años
-        <input type="number" name="anos" min="1" step="1" required placeholder="Ej: 10">
-      </label>
+            <div class="field">
+              <label for="mensual">Aportación mensual (€)</label>
+              <input class="input" id="mensual" type="number" name="mensual" min="0" step="1" required placeholder="Ej: 100">
+              <div class="hint">Aportación constante cada mes.</div>
+            </div>
 
-      <button type="submit">Calcular</button>
-    </form>
-    <p class="muted" style="margin-top:10px;">
-      Si no tienes indemnización (o no quieres usarla), deja “Inversión inicial” en blanco o a 0.
-    </p>
-  </section>
+            <div class="field">
+              <label for="interes">Rentabilidad anual (%)</label>
+              <input class="input" id="interes" type="number" name="interes" min="0" step="0.1" required placeholder="Ej: 6">
+              <div class="hint">Ej. 6 = 6% anual (estimación).</div>
+            </div>
 
-  <section class="card" id="resultado" style="display:none;">
-    <h2>Resultado</h2>
-    <div id="out"></div>
-  </section>
+            <div class="field">
+              <label for="anos">Años</label>
+              <input class="input" id="anos" type="number" name="anos" min="1" step="1" required placeholder="Ej: 10">
+              <div class="hint">Duración total de la simulación.</div>
+            </div>
+          </div>
 
-  <section class="card">
-    <h2>Opciones habituales para planificar la jubilación</h2>
-    <p>
-      Muchas personas combinan ahorro, inversión y productos financieros para preparar la jubilación.
-      Suelen aparecer términos como fondos indexados, planes de pensiones, PIAS, seguros de ahorro o cuentas remuneradas.
-      Cada opción tiene costes, riesgo y fiscalidad diferentes.
-    </p>
-    <p class="muted">
-      Este sitio no vende productos ni da asesoramiento: es una calculadora orientativa.
-    </p>
-  </section>
+          <div class="actions">
+            <button class="cta" type="submit">Calcular</button>
+            <a class="btn" href="/despido.html">Despido</a>
+            <a class="btn" href="/paro.html">Paro</a>
+          </div>
+        </form>
+      </section>
 
-  <section class="card">
-    <h2>Qué es el interés compuesto y por qué importa</h2>
+      <!-- RESULT (premium KPIs) -->
+      <section class="result mt-4" id="resultado" style="display:none;">
+        <h2 class="mt-0">Resultado</h2>
+        <p class="muted">Estimación mensual. No incluye inflación ni impuestos.</p>
 
-    <p>
-      El interés compuesto es el efecto de ganar intereses sobre los intereses. En lugar de crecer linealmente,
-      tu dinero crece de forma acumulativa porque cada periodo se calcula sobre un capital cada vez mayor.
-    </p>
+        <div class="kpis">
+          <div class="kpi">
+            <div class="label">Total acumulado</div>
+            <div class="value" id="kpi-total">—</div>
+            <div class="note">Final</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Total aportado</div>
+            <div class="value" id="kpi-aportado">—</div>
+            <div class="note">Inicial + mensual</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Ganancia estimada</div>
+            <div class="value" id="kpi-ganancia">—</div>
+            <div class="note">Antes de impuestos</div>
+          </div>
+        </div>
 
-    <h3>Cómo funciona esta calculadora</h3>
+        <div class="notice warn mt-4" id="out" role="status" aria-live="polite">
+          <strong>Nota:</strong> esto es una simulación. La rentabilidad real puede variar.
+        </div>
+      </section>
 
-    <ul>
-      <li><strong>Inversión inicial:</strong> lo que inviertes al principio (opcional).</li>
-      <li><strong>Aportación mensual:</strong> lo que añades cada mes.</li>
-      <li><strong>Rentabilidad anual:</strong> porcentaje estimado anual.</li>
-      <li><strong>Años:</strong> duración de la inversión.</li>
-    </ul>
+      <section class="card">
+        <h2 class="mt-0">Opciones habituales para planificar la jubilación</h2>
+        <p>
+          Muchas personas combinan ahorro, inversión y productos financieros para preparar la jubilación.
+          Suelen aparecer términos como fondos indexados, planes de pensiones, PIAS, seguros de ahorro o cuentas remuneradas.
+          Cada opción tiene costes, riesgo y fiscalidad diferentes.
+        </p>
+        <p class="muted mb-0">
+          Este sitio no vende productos ni da asesoramiento: es una calculadora orientativa.
+        </p>
+      </section>
 
-    <p>
-      El cálculo se realiza mensualmente para aproximar cómo funciona una inversión con aportaciones periódicas.
-      No incluye inflación ni impuestos.
-    </p>
+      <section class="card">
+        <h2 class="mt-0">Qué es el interés compuesto y por qué importa</h2>
 
-    <h3>Ejemplo práctico</h3>
+        <p>
+          El interés compuesto es el efecto de ganar intereses sobre los intereses. En lugar de crecer linealmente,
+          tu dinero crece de forma acumulativa porque cada periodo se calcula sobre un capital cada vez mayor.
+        </p>
 
-    <p>
-      Si empiezas con 0 €, aportas 100 € al mes, y obtienes un 6% anual durante 10 años, el resultado acumulado
-      suele ser superior a lo aportado por el efecto del interés compuesto.
-    </p>
+        <h3>Cómo funciona esta calculadora</h3>
 
-    <h3>Preguntas frecuentes</h3>
+        <ul>
+          <li><strong>Inversión inicial:</strong> lo que inviertes al principio (opcional).</li>
+          <li><strong>Aportación mensual:</strong> lo que añades cada mes.</li>
+          <li><strong>Rentabilidad anual:</strong> porcentaje estimado anual.</li>
+          <li><strong>Años:</strong> duración de la inversión.</li>
+        </ul>
 
-    <p><strong>¿Es un cálculo exacto?</strong><br>
-      No. Es una simulación orientativa. La rentabilidad real puede variar.
-    </p>
+        <p>
+          El cálculo se realiza mensualmente para aproximar cómo funciona una inversión con aportaciones periódicas.
+          No incluye inflación ni impuestos.
+        </p>
 
-    <p><strong>¿Incluye impuestos?</strong><br>
-      No. Este simulador no calcula tributación ni fiscalidad.
-    </p>
+        <h3>Ejemplo práctico</h3>
 
-    <p><strong>¿Para qué sirve entonces?</strong><br>
-      Para entender el orden de magnitud y el efecto de aportar de forma constante.
-    </p>
-  </section>
+        <p>
+          Si empiezas con 0 €, aportas 100 € al mes, y obtienes un 6% anual durante 10 años, el resultado acumulado
+          suele ser superior a lo aportado por el efecto del interés compuesto.
+        </p>
 
-</main>
+        <h3>Preguntas frecuentes</h3>
 
-<footer class="wrap footer">
-  <p class="muted">
-    Cálculo orientativo. No constituye asesoramiento financiero. ·
-    <a href="aviso-legal.html">Aviso legal</a> ·
-    <a href="privacidad.html">Privacidad</a> ·
-    <a href="cookies.html">Cookies</a>
-  </p>
-</footer>
+        <p><strong>¿Es un cálculo exacto?</strong><br>
+          No. Es una simulación orientativa. La rentabilidad real puede variar.
+        </p>
 
-<script>
-document.getElementById("formInteres").addEventListener("submit", function(e){
-  e.preventDefault();
+        <p><strong>¿Incluye impuestos?</strong><br>
+          No. Este simulador no calcula tributación ni fiscalidad.
+        </p>
 
-  const capitalRaw = this.capital.value;
-  const capital = capitalRaw === "" ? 0 : Number(capitalRaw);
+        <p class="mb-0"><strong>¿Para qué sirve entonces?</strong><br>
+          Para entender el orden de magnitud y el efecto de aportar de forma constante.
+        </p>
+      </section>
 
-  const mensual = Number(this.mensual.value);
-  const interesMensual = Number(this.interes.value) / 100 / 12;
-  const anos = Number(this.anos.value);
+    </div>
+  </main>
 
-  const meses = anos * 12;
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="stack">
+        <strong>cuantomequeda.io</strong>
+        <p class="muted mb-0">Cálculo orientativo. No constituye asesoramiento financiero.</p>
+        <small class="subtle">© <span id="y"></span> cuantomequeda.io</small>
+      </div>
 
-  // Caso sin interés (0%): acumulación lineal
-  let total;
-  if (!isFinite(interesMensual) || interesMensual === 0) {
-    total = capital + (mensual * meses);
-  } else {
-    total = capital * Math.pow(1 + interesMensual, meses);
-    total += mensual * ((Math.pow(1 + interesMensual, meses) - 1) / interesMensual);
-  }
+      <div class="stack">
+        <div class="footer-links" aria-label="Legal">
+          <a href="/aviso-legal.html">Aviso legal</a>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/cookies.html">Cookies</a>
+        </div>
 
-  const aportado = capital + (mensual * meses);
-  const ganancia = total - aportado;
+        <div class="notice">
+          <strong>Tip:</strong> si vienes de un despido, cruza números con <a class="link" href="/paro.html">Paro</a>.
+        </div>
+      </div>
+    </div>
 
-  document.getElementById("resultado").style.display = "block";
-  document.getElementById("out").innerHTML =
-    "<p><strong>Total acumulado:</strong> " +
-    total.toLocaleString("es-ES", {style:"currency", currency:"EUR"}) +
-    "</p>" +
-    "<p><strong>Total aportado:</strong> " +
-    aportado.toLocaleString("es-ES", {style:"currency", currency:"EUR"}) +
-    "</p>" +
-    "<p><strong>Ganancia estimada (antes de impuestos):</strong> " +
-    ganancia.toLocaleString("es-ES", {style:"currency", currency:"EUR"}) +
-    "</p>";
-});
-</script>
+    <script>
+      document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
+    </script>
+  </footer>
 
+  <!-- JS (existente en la página, adaptado a KPIs) -->
+  <script>
+    document.getElementById("formInteres").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const capitalRaw = this.capital.value;
+      const capital = capitalRaw === "" ? 0 : Number(capitalRaw);
+
+      const mensual = Number(this.mensual.value);
+      const interesMensual = Number(this.interes.value) / 100 / 12;
+      const anos = Number(this.anos.value);
+
+      const meses = anos * 12;
+
+      // Caso sin interés (0%): acumulación lineal
+      let total;
+      if (!isFinite(interesMensual) || interesMensual === 0) {
+        total = capital + (mensual * meses);
+      } else {
+        total = capital * Math.pow(1 + interesMensual, meses);
+        total += mensual * ((Math.pow(1 + interesMensual, meses) - 1) / interesMensual);
+      }
+
+      const aportado = capital + (mensual * meses);
+      const ganancia = total - aportado;
+
+      document.getElementById("resultado").style.display = "block";
+
+      const fmtEUR = (n) => n.toLocaleString("es-ES", {style:"currency", currency:"EUR"});
+
+      document.getElementById("kpi-total").textContent = fmtEUR(total);
+      document.getElementById("kpi-aportado").textContent = fmtEUR(aportado);
+      document.getElementById("kpi-ganancia").textContent = fmtEUR(ganancia);
+
+      const out = document.getElementById("out");
+      out.className = "notice warn mt-4";
+      out.innerHTML =
+        "<strong>Detalle:</strong> " +
+        (capital > 0 ? ("inicial " + fmtEUR(capital) + " · ") : "") +
+        "aportación " + fmtEUR(mensual) + "/mes · " +
+        "duración " + anos + " años · " +
+        "rentabilidad " + Number(this.interes.value).toLocaleString("es-ES") + "% anual.";
+    });
+  </script>
+
+  <!-- AMP Auto Ads tag (conservar, dentro del body) -->
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-6244955081281803"></amp-auto-ads>
 </body>
-  <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-6244955081281803">
-</amp-auto-ads>
 </html>
