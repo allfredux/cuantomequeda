@@ -46,7 +46,8 @@ test('only robots.txt is an explicitly public asset', async () => {
 test('Vercel only exports public assets and routes the rest to the gate', async () => {
   const config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
   assert.equal(config.outputDirectory, 'public');
-  assert.equal(config.public, false);
+  // The deployment API rejected this property; access stays closed in gateway.mjs.
+  assert.equal(Object.hasOwn(config, 'public'), false);
   assert.equal(config.framework, null);
   assert.deepEqual(config.routes, [{ handle: 'filesystem' }, { src: '/(.*)', dest: '/api/gateway' }]);
 });
