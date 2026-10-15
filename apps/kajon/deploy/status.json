@@ -1,0 +1,22 @@
+{
+  "schema": "kajon-release-evidence-v1",
+  "target": {
+    "repository": "allfredux/cuantomequeda",
+    "branch": "kajon/integration",
+    "team_id": "team_qdb4VpjV11GwKgee3zRqc1Ih",
+    "project_id": null,
+    "commit": null,
+    "origin": null,
+    "environment": "production"
+  },
+  "privacy": "invite_only",
+  "public_actions": false,
+  "core": {},
+  "social": {},
+  "observed": {
+    "github_backup": "backup/cuantomequeda-before-kajon-20261015",
+    "vercel_project_creation": "403 forbidden; unresolved",
+    "original_module_local_tests": { "passed": 125, "failed": 0, "mode": "local" },
+    "production_evidence": "none"
+  }
+}
