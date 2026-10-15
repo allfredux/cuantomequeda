@@ -1,0 +1,11 @@
+{
+  "name": "kajon-host-bootstrap",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "npm test"
+  }
+}
