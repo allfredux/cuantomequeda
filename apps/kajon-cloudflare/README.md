@@ -1,53 +1,52 @@
-# Kajon: Cloudflare Free hosting bootstrap
+# Kajon: closed Cloudflare hosting bootstrap
 
-This is ONLY a closed hosting check, not the Kajon application or its migration.
-It is isolated in apps/kajon-cloudflare on branch kajon/cloudflare.
-The Vercel bootstrap in apps/kajon and all legacy files remain unchanged.
+This is ONLY a closed hosting check, not the Kajon application or its data migration.
+The legacy site and Vercel bootstrap remain unchanged.
 
-## Workers Builds settings
+## Workers Builds target
 
-Use the existing Cloudflare account whose billing page shows Workers Free active.
-Do not upgrade the plan, register domains, enable paid services, or expose user data.
-
-- Product: Workers (not Pages)
+- Worker: kajon
 - Repository: allfredux/cuantomequeda
-- Worker name: kajon (must match wrangler.jsonc)
-- Production branch: kajon/cloudflare (not main)
+- Production branch: kajon/cloudflare
 - Root directory: apps/kajon-cloudflare
 - Build command: npm run build
-- Deploy command: npx wrangler deploy
-- Build/runtime variables and application secrets: none required
-- Disable builds for non-production branches for this initial setup.
+- Deploy command: npx wrangler@4.151.1 deploy --config wrangler.jsonc
+- Preview builds: disabled
+- Build cache: disabled for this repair
+- Application variables and secrets: none
 
-Workers Builds supplies the deployment authentication through the dashboard flow.
-Do not paste Cloudflare/GitHub passwords or API tokens into chat or this repository.
-The default Wrangler command is used; no claim is made that a particular Wrangler
-version or workerd build has been validated locally.
+The explicit config path avoids falling back to automatic static-site detection.
+The version is pinned to the Wrangler version observed in the original build log.
+Do not deploy the repository root or pass --assets .; repository internals must
+never be uploaded as static assets.
 
-## Expected live verification
+## Containment
 
-- GET /api/health: HTTP 200, service kajon, runtime cloudflare-workers,
-  bootstrapVersion 0.0.2, status setup_required, ready false.
-- GET /: HTTP 503 with an explicit closed-maintenance message.
-- GET /robots.txt: HTTP 200 with Disallow: /.
-- POST, PUT, PATCH, DELETE, OPTIONS: HTTP 405. No write actions exist.
+workers_dev:false and preview_urls:false keep both public URL types disabled,
+including after later Wrangler deployments. No asset directory, domains, D1,
+R2, KV, AI, containers, queues or scheduled tasks are configured.
+Do not enable public routes until a separate authorized readiness check.
 
-The health response verifies the live host only. ready:false is deliberate.
-The application, login, durable storage, social accounts and AI are NOT connected.
-No D1/R2/KV/AI/queue/cron bindings exist and no resources are auto-provisioned.
-There is no signup, data collection, paid API call or automatic social action.
-The maintenance gate is not a replacement for the future authenticated runtime.
-Do not remove the Vercel project until the migration is verified separately.
+## Local verification
 
-## Verification performed
+On 2026-10-18 npm run build ran on Node 22.16.0: 17 tests passed, 0 failed.
+These are Node Fetch API tests, including /.git/config and /.git/HEAD denial.
+They are not production HTTP checks or proof of a complete Kajon application.
 
-`npm run build` executed with Node 22.16.0: 15 tests passed, 0 failed.
-Tests cover the fetch handler using Node's Fetch API and exact local configuration.
-They do NOT verify Cloudflare bundling, workerd execution, billing, limits or live routing.
-Those checks remain pending until Workers Builds succeeds and its actual URL is tested.
+The source handler returns HTTP 200 with ready:false at /api/health, HTTP 503
+maintenance elsewhere (except robots.txt), and HTTP 405 for non-read methods.
+With public URLs disabled, these responses are not publicly reachable.
 
-## Primary references
+## Remote verification required
 
-- https://developers.cloudflare.com/workers/ci-cd/builds/
+Read back the build configuration, check the exact deployed commit and build
+logs, confirm a Worker module was uploaded without static assets, and read back
+the subdomain settings after deployment. Keep runtime HTTP verification separate
+from successful deployment status. No signup, database or social/API integration
+is active. Do not delete the Vercel project until migration is validated.
+
+## References
+
 - https://developers.cloudflare.com/workers/ci-cd/builds/configuration/
+- https://developers.cloudflare.com/workers/wrangler/commands/workers/
 - https://developers.cloudflare.com/workers/wrangler/configuration/

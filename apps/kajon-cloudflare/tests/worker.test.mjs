@@ -20,7 +20,7 @@ test('root stays closed', async () => {
   assert.match(await res.text(), /Acceso cerrado/);
 });
 
-for (const path of ['/api/state', '/api/oauth/x/start', '/api/oauth/linkedin/start', '/.env', '/src/worker.mjs', '/api/health/extra']) {
+for (const path of ['/api/state', '/api/oauth/x/start', '/api/oauth/linkedin/start', '/.env', '/src/worker.mjs', '/api/health/extra', '/.git/config', '/.git/HEAD']) {
   test(`no application content exposed at ${path}`, () => {
     assert.equal(worker.fetch(request(path)).status, 503);
   });
@@ -70,11 +70,11 @@ test('robots disallows the complete site', async () => {
   assert.equal(await worker.fetch(request('/robots.txt')).text(), 'User-agent: *\nDisallow: /\n');
 });
 
-test('config names only the intended Worker, with previews and logging disabled', async () => {
+test('config names only the intended Worker, with public URLs, previews and logging disabled', async () => {
   const c = JSON.parse(await readFile(new URL('../wrangler.jsonc', import.meta.url), 'utf8'));
   assert.deepEqual(c, {
     name: 'kajon', main: 'src/worker.mjs', compatibility_date: '2026-10-01',
-    workers_dev: true, preview_urls: false, observability: { enabled: false }
+    workers_dev: false, preview_urls: false, observability: { enabled: false }
   });
   // Exact config also prevents introducing automatic database/AI/queue provisioning.
 });
