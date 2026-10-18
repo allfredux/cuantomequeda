@@ -1,0 +1,13 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const root=new URL('../',import.meta.url),strip=s=>s.replace(/^import .*?;\n/gm,'').replace(/^export /gm,'');
+const code=[];for(const f of ['channels','core','adapters','panel'])code.push(strip(await readFile(new URL(`src/${f}.mjs`,root),'utf8')));
+const css=await readFile(new URL('src/panel.css',root),'utf8');
+const entry=`\nlet csrf='';\nasync function session(){const r=await fetch('/api/kajon/session',{credentials:'same-origin',cache:'no-store'});if(!r.ok||!r.headers.get('content-type')?.includes('application/json'))throw new Error('Recarga e inicia sesión de nuevo.');const s=await r.json();csrf=s.csrf;return s;}\ntry{await session();await mountSignal(document.getElementById('signal'),{adapter:createHttpAdapter({getCSRF:async()=>{await session();return csrf;}}),css:${JSON.stringify(css)}});}catch(e){document.getElementById('signal').textContent='Kajon: '+e.message;}\n`;
+const script=(code.join('\n')+entry).replace(/<\/script/gi,'<\\/script');
+const hash=createHash('sha256').update(script).digest('base64');
+const html=`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Kajon · Espacio editorial privado</title><style>html,body{margin:0;padding:0;background:#f6f7fa}#signal:empty::after{content:'Abriendo tu espacio privado…';display:block;padding:40px;font:16px system-ui}</style></head><body><div id="signal"></div><script type="module">${script}</script></body></html>`;
+await mkdir(new URL('generated/',root),{recursive:true});
+await writeFile(new URL('generated/ui.mjs',root),`export const HTML=${JSON.stringify(html)};\nexport const SCRIPT_HASH=${JSON.stringify(hash)};\n`);
+await writeFile(new URL('generated/index.html',root),html);
+console.log('UI privada compilada. No se exportan archivos del repositorio como assets.');

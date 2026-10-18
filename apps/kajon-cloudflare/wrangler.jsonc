@@ -1,8 +1,19 @@
 {
-  "name": "kajon",
-  "main": "src/worker.mjs",
-  "compatibility_date": "2026-10-01",
-  "workers_dev": false,
-  "preview_urls": false,
-  "observability": { "enabled": false }
+ "name":"kajon",
+ "main":"server/worker.mjs",
+ "compatibility_date":"2026-10-01",
+ "workers_dev":false,
+ "preview_urls":false,
+ "keep_vars":true,
+ "observability":{"enabled":false},
+ "vars":{
+  "APP_ORIGIN":"https://kajon.alfredo-c02.workers.dev",
+  "ACCESS_ISSUER":"https://purple-scene-4834.cloudflareaccess.com",
+  "ACCESS_AUD":"d64589dd8f29d1014f26bb9dfd7c2a8d8ff67ce5461aa7d183877fae4bfc1132",
+  "ENABLE_FREE_AI":"true",
+  "ENABLE_ANTHROPIC":"false",
+  "ENABLE_X_READS":"false"
+ },
+ "d1_databases":[{"binding":"DB","database_name":"kajon","database_id":"6999f2c6-8259-46d6-8fe0-4a47f71c7310","jurisdiction":"eu","migrations_dir":"migrations"}],
+ "ai":{"binding":"AI"}
 }
