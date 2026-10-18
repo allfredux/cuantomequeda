@@ -4,5 +4,5 @@
  "private":true,
  "type":"module",
  "engines":{"node":">=22"},
- "scripts":{"test":"node --test tests/workspace.test.mjs","build":"node scripts/prepare.mjs && npm test"}
+ "scripts":{"test":"node --test tests/workspace.test.mjs tests/buffer-personal.test.mjs","build":"node scripts/prepare.mjs && npm test"}
 }
